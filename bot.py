@@ -12,7 +12,7 @@ intents.members = True
 activity = discord.Activity(type=discord.ActivityType.playing, name="VS Code")
 bot = commands.Bot(command_prefix='?', activity=activity, intents=intents)
 bot.announcement_channel_set = ""
-#c
+
 
 
 @bot.command()

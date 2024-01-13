@@ -5,14 +5,13 @@ from discord.ext import commands
 import time
 
 #all pre-connection code
-bot_token = 'OMTE5NTgyMDUxMTUwNzI3MTcxMQ.GtjXzZ.OWg9K8ZCodRV5CC2VggcbRX6W0dvdsYbrJYvnk'
+bot_token = 'MTE5NTgyMDUxMTUwNzI3MTcxMQ.GxvwnP.sAW1Xec0qoQqVeEW-RhEtwCLhTSHVR8klRETwE'
 intents = discord.Intents.all()
 intents.members = True
 
 activity = discord.Activity(type=discord.ActivityType.playing, name="VS Code")
 bot = commands.Bot(command_prefix='?', activity=activity, intents=intents)
 bot.announcement_channel_set = ""
-#c
 
 
 @bot.command()
@@ -26,6 +25,9 @@ async def spam(ctx, numberofmessages, message):
     for i in range(int(numberofmessages)):
         await ctx.send(message)
 
+@bot.command()
+async def poop(ctx, user: discord.User):
+    await user.send(":poop: " * 150)
 
 #For command errors
 @bot.event
@@ -36,6 +38,10 @@ async def on_command_error(ctx, error):
         await ctx.send("You dont have all the requirements :angry:")
     else:
         raise error
+    
+@bot.event
+async def on_ready():
+    print("Bot is ready!")
 
 
 bot.run(bot_token)

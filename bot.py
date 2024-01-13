@@ -5,7 +5,7 @@ from discord.ext import commands
 import time
 
 #all pre-connection code
-bot_token = 'MTE5NTgyMDUxMTUwNzI3MTcxMQ.GxvwnP.sAW1Xec0qoQqVeEW-RhEtwCLhTSHVR8klRETwE'
+bot_token = "Paste token here"
 intents = discord.Intents.all()
 intents.members = True
 
